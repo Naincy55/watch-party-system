@@ -1,5 +1,7 @@
 const express = require("express");
 const http = require("http");
+const PORT = process.env.PORT || 5001;
+
 const cors = require("cors");
 const { Server } = require("socket.io");
 
@@ -56,6 +58,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(5001, () => {
-  console.log("Backend running on port 5000");
+server.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
 });
